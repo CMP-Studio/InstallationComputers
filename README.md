@@ -124,7 +124,6 @@ mailer.login(SMTP_USERNAME, SMTP_PASSWORD)
 mailer.sendmail(SMTP_FROM, [SMTP_TO], msg.as_string())
 mailer.close()
 ```
-
 * Turn script to executable: `chmod +x /absolute/path/to/script.py`
 * Add to crontab to run at 7:01am: <br/>
 `1 7 * * * COMP_NAME="name" python /absolute/path/to/script.py`
