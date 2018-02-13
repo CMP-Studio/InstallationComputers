@@ -57,12 +57,12 @@ We have a slack channel that receives a screenshot of each exhibit every morning
 * Add to crontab to take a screenshot at 7:00am: <br/>
   `0 7 * * * "/usr/sbin/screencapture" -f /absolute/path/to/screenshot.jpg`
 #### Screenshots on Linux
-* Install scrot with sudo apt-get install scrot
+* Install scrot: `sudo apt-get install scrot`
 * Add to crontab: <br/>
   `0 7 * * * DISPLAY=:0 /usr/bin/scrot /absolute/path/to/screenshot.jpg`
 #### Sending Screenshots to Slack (Mac & Linux)
 * Get a slack token
-* Install slackclient with pip: pip install slackclient
+* Install slackclient with pip: `pip install slackclient`
 * Save this python script with the slack token, channel, and path to screenshot:
 ```
 from slackclient import SlackClient
@@ -83,10 +83,10 @@ sc.api_call(
 `1 7 * * * COMP_NAME="name" python /absolute/path/to/script.py`
 
 #### Sending Screenshots to Email (Mac & Linux)
-Before itegrating with Slack, we sent screenshots via email.
-* Create a gmail address and get an auth token 
-* Save this python script with the email addresses and token:
-```# Change these values:
+Before integrating with Slack, we sent screenshots via email.
+* Save this python script with the information filled in:
+```
+# Change these values:
 
 SMTP_SERVER = 'smtp.server.com'
 SMTP_PORT = 000
@@ -122,7 +122,9 @@ mailer.starttls()
 # mailer.connect()
 mailer.login(SMTP_USERNAME, SMTP_PASSWORD)
 mailer.sendmail(SMTP_FROM, [SMTP_TO], msg.as_string())
-mailer.close()```
+mailer.close()
+```
+
 * Turn script to executable: `chmod +x /absolute/path/to/script.py`
 * Add to crontab to run at 7:01am: <br/>
 `1 7 * * * COMP_NAME="name" python /absolute/path/to/script.py`
