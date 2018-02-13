@@ -35,7 +35,7 @@ Optionally to shutdown the computer on a daily schedule. 
 * Run the app fullscreen to hide the system menu
 
 
-## Prevent Crash Dialogs
+## Prevent Crash Dialogs
 #### Mac Terminal Commands
 * `defaults write com.apple.CrashReporter DialogType none`
 * `defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false`
@@ -50,6 +50,7 @@ We run a script at the top of every minute, which opens the application if it is
 * Install run-one: `sudo apt-get install run-one`
 * Add to crontab: <br/>
   `* * * * * DISPLAY=:0 run-one /absolute/path/to/application`
+
 
 ## Sending Screenshots
 We have a slack channel that receives a screenshot of each exhibit every morning after it starts up. We check this for anything unusual before the museums are open to the public. In the future we hope to also report frame rate, cpu usage, crashes, and network connection.
@@ -81,7 +82,6 @@ sc.api_call(
 * Turn script to executable: `chmod +x /absolute/path/to/script.py`
 * Add to crontab to run at 7:01am: <br/>
 `1 7 * * * COMP_NAME="name" python /absolute/path/to/script.py`
-
 #### Sending Screenshots to Email (Mac & Linux)
 Before integrating with Slack, we sent screenshots via email.
 * Save this python script with the information filled in:
@@ -105,7 +105,6 @@ import smtplib, email
 from email import encoders
 from email.mime.image import MIMEImage
 import os
-
 msg = email.MIMEMultipart.MIMEMultipart()
 fp = open(os.path.basename(TEXT_FILENAME), 'rb')
 img = MIMEImage(fp.read())
@@ -114,7 +113,6 @@ msg['Subject'] = SUBJECT
 msg.attach(img)
 msg.add_header('From', SMTP_FROM)
 msg.add_header('To', SMTP_TO)
-
 # Now send the message
 mailer = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
 mailer.starttls()
