@@ -9,12 +9,12 @@ Set Up & Monitoring Guide
 [Remote Access]() <br/>
 
 ## Computer Settings
-### Mac
+#### Mac
 We follow Step 1 and (optional) Step 4 from this guide: <br/>
 https://github.com/laserpilot/Installation_Up_4evr  </br>
 to turn off screensaver, prevent notifications, and other necessary mac settings. <br/>
 Optionally to shutdown the computer on a daily schedule. 
-### Linux
+#### Linux
 * Set computer to power on after power failure
   * Hold `F2` as the computer starts up to enter BIOS
   * Advanced Power → After Power Failure → Power On
@@ -25,42 +25,42 @@ Optionally to shutdown the computer on a daily schedule. 
 
 
 ## Hide Menus
-### Mac
+#### Mac
 * Right-click application and select ‘Show Package Contents’
 * Open Info.plist
 * Add key `Application UI Presentation Mode` with value `3 (all hidden)` to never show the system menu or dock over application
-### Linux
+#### Linux
 * System Settings → Appearance → Behavior → Autohide Launcher → ON
 * Set Autohide Launcher Reveal Sensitivity to lowest
 * Run the app fullscreen to hide the system menu
 
 
 ## Prevent Crash Dialogs
-### Mac Terminal Commands
+#### Mac Terminal Commands
 * `defaults write com.apple.CrashReporter DialogType none`
 * `defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false`
 
 
 ## Keep Application Open
 We run a script at the top of every minute, which opens the application if it is closed. To allow script to run as an executable: `chmod +x script.ext`
-### Mac
+#### Mac
 * Add to crontab: <br/>
   `* * * * * open -a /absolute/path/to/application`
-### Linux
+#### Linux
 * Install run-one: `sudo apt-get install run-one`
 * Add to crontab: <br/>
   `* * * * * DISPLAY=:0 run-one /absolute/path/to/application`
 
 ## Sending Screenshots
 We have a slack channel that receives a screenshot of each exhibit every morning after it starts up. We check this for anything unusual before the museums are open to the public. In the future we hope to also report frame rate, cpu usage, crashes, and network connection.
-### Screenshots on Mac
+#### Screenshots on Mac
 * Add to crontab to take a screenshot at 7:00am: <br/>
   `0 7 * * * "/usr/sbin/screencapture" -f /absolute/path/to/screenshot.jpg`
-### Screenshots on Linux
+#### Screenshots on Linux
 * Install scrot with sudo apt-get install scrot
 * Add to crontab: <br/>
   `0 7 * * * DISPLAY=:0 /usr/bin/scrot /absolute/path/to/screenshot.jpg`
-### Sending Screenshots to Slack (Mac & Linux)
+#### Sending Screenshots to Slack (Mac & Linux)
 * Get a slack token
 * Install slackclient with pip: pip install slackclient
 * Save this python script with the slack token, channel, and path to screenshot:
@@ -82,7 +82,7 @@ sc.api_call(
 * Add to crontab to run at 7:01am: <br/>
 `1 7 * * * COMP_NAME="name" python /absolute/path/to/script.py`
 
-### Sending Screenshots to Email (Mac & Linux)
+#### Sending Screenshots to Email (Mac & Linux)
 Before itegrating with Slack, we sent screenshots via email.
 * Create a gmail address and get an auth token 
 * Save this python script with the email addresses and token:
