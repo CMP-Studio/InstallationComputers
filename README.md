@@ -1,12 +1,12 @@
 # Installation Computers
 Set Up & Monitoring Guide
 
-[Computer Settings]() <br/>
-[Hide Menus]() <br/>
-[Prevent Crash Dialogs]() <br/>
-[Keep Application Open]() <br/>
-[Sending Screenshots]() <br/>
-[Remote Access]() <br/>
+[Computer Settings](#computer-settings) <br/>
+[Hide Menus](#hide-menus) <br/>
+[Prevent Crash Dialogs](#prevent-crash-dialogs) <br/>
+[Keep Application Open](#keep-application-open) <br/>
+[Sending Screenshots](#sending-screenshots) <br/>
+[Remote Access](#remote-access) <br/>
 
 ## Computer Settings
 #### Mac
