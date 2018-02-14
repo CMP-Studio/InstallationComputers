@@ -19,6 +19,7 @@ Optionally to shutdown the computer on a daily schedule. 
   * Hold `F2` as the computer starts up to enter BIOS
   * Advanced Power → After Power Failure → Power On
   * Press `F10` to save and exit BIOS
+* [Set up power button to shut off computer without extra GUI prompt](https://askubuntu.com/questions/86376/how-to-specify-power-button-to-do-a-shutdown-h-now-instead-of-graphical-shutd)
 * Clear the desktop and set a background
 * Disable auto update in Software and Update settings
 * Disable firewall: `sudo ufw disable`
